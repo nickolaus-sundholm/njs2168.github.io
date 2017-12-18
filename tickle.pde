@@ -1,4 +1,4 @@
-String message = "try me";
+String message = "fin";
 float x, y; // X and Y coordinates of text
 float hr, vr;  // horizontal and vertical radius of the text
 
