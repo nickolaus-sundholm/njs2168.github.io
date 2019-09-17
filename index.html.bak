@@ -31,9 +31,21 @@
 
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0xffffff );
-
+				
+				var loader = new THREE.TextureLoader();
+				var clothTexture = loader.load( 'textures/patterns/circuit_pattern.png' );
+				clothTexture.anisotropy = 16;
+				
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
-				var material = new THREE.MeshNormalMaterial();
+				// var material = new THREE.MeshNormalMaterial();
+				
+				// cloth material
+
+				var material = new THREE.MeshLambertMaterial( {
+					map: clothTexture,
+					side: THREE.DoubleSide,
+					alphaTest: 0.5
+				} );
 
 				root = new THREE.Mesh( geometry, material );
 				root.position.x = 1000;
