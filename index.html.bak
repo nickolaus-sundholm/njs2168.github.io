@@ -44,7 +44,7 @@
 
 				var material = new THREE.MeshLambertMaterial( {
 					map: texture,
-				  side: THREE.DoubleSide,
+				  // side: THREE.DoubleSide,
 				} );
 				
 				group = new THREE.Group();
