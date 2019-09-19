@@ -34,18 +34,18 @@
 				scene.fog = new THREE.Fog( 0xffffff, 1, 10000 );
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
-				// var material = new THREE.MeshNormalMaterial();
+				var material = new THREE.MeshNormalMaterial();
 				
 				
-				// cloth material
-				var loader = new THREE.TextureLoader();
-				var texture = loader.load( 'textures/patterns/generation12.png' );
-				//clothTexture.anisotropy = 16;
-
-				var material = new THREE.MeshLambertMaterial( {
-					map: texture,
-				  // side: THREE.DoubleSide,
-				} );
+//				// cloth material
+//				var loader = new THREE.TextureLoader();
+//				var texture = loader.load( 'textures/patterns/generation12.png' );
+//				//clothTexture.anisotropy = 16;
+//
+//				var material = new THREE.MeshLambertMaterial( {
+//					map: texture,
+//				  // side: THREE.DoubleSide,
+//				} );
 				
 				group = new THREE.Group();
 
