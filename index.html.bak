@@ -34,24 +34,35 @@
 				scene.fog = new THREE.Fog( 0xffffff, 1, 10000 );
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
-				var material = new THREE.MeshNormalMaterial();
+				// var material = new THREE.MeshNormalMaterial();
 				
 				
-//				// cloth material
-//				var loader = new THREE.TextureLoader();
-//				var clothTexture = loader.load( 'textures/patterns/trump.png' );
-//				clothTexture.anisotropy = 16;
-//
-//				var material = new THREE.MeshLambertMaterial( {
-//					map: clothTexture,
-//				// side: THREE.DoubleSide,
-//				// alphaTest: 0.5
-//				} );
+				// cloth material
+				var loader = new THREE.TextureLoader();
+				var texture = loader.load( 'textures/patterns/generation12.png' );
+				//clothTexture.anisotropy = 16;
+
+				var material = new THREE.MeshLambertMaterial( {
+					map: texture,
+				  side: THREE.DoubleSide,
+				} );
 				
 				group = new THREE.Group();
 
 				for ( var i = 0; i < 1000; i ++ ) {
 
+
+//					// cloth material
+//					var loader = new THREE.TextureLoader();
+//					var clothTexture = loader.load( 'textures/patterns/generation1' + i + '.png' );
+//					//clothTexture.anisotropy = 16;
+//
+//					var material = new THREE.MeshLambertMaterial( {
+//					map: clothTexture,
+//				  side: THREE.DoubleSide,
+//				  alphaTest: 0.5
+//					} );
+					
 					var mesh = new THREE.Mesh( geometry, material );
 					mesh.position.x = Math.random() * 2000 - 1000;
 					mesh.position.y = Math.random() * 2000 - 1000;
