@@ -43,8 +43,8 @@
 
 				var material = new THREE.MeshLambertMaterial( {
 					map: clothTexture,
-					side: THREE.DoubleSide,
-					alphaTest: 0.5
+				// side: THREE.DoubleSide,
+				// alphaTest: 0.5
 				} );
 				
 				group = new THREE.Group();
