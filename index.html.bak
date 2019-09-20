@@ -57,7 +57,7 @@
 
 				group = new THREE.Group();
 
-				for ( var i = 0; i < 100; i ++ ) {
+				for ( var i = 0; i < 1000; i ++ ) {
 
 					if (i > 100) {
   					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-100 + ".png" );
