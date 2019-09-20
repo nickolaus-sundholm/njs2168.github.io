@@ -47,7 +47,7 @@
 					] );
 				
 				// load a texture, set wrap mode to repeat
-				var texture = new THREE.TextureLoader().load( "textures/patterns/generation12.jpg" );
+				var texture = new THREE.TextureLoader().load( "textures/patterns/generation12.png" );
 				texture.wrapS = THREE.RepeatWrapping;
 				texture.wrapT = THREE.RepeatWrapping;
 				texture.repeat.set( 4, 4 );

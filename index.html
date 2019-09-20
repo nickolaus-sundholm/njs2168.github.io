@@ -48,9 +48,9 @@
 				
 				// load a texture, set wrap mode to repeat
 				var texture = new THREE.TextureLoader().load( "textures/patterns/generation12.png" );
-				texture.wrapS = THREE.RepeatWrapping;
-				texture.wrapT = THREE.RepeatWrapping;
-				texture.repeat.set( 4, 4 );
+				//texture.wrapS = THREE.RepeatWrapping;
+				//texture.wrapT = THREE.RepeatWrapping;
+				//texture.repeat.set( 4, 4 );
 				
 				//var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
 				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
