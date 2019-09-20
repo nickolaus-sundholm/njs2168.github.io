@@ -37,18 +37,25 @@
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
 				
-				var loader = new THREE.CubeTextureLoader();
-				loader.setPath( 'textures/cube/pisa/' );
-
-				var textureCube = loader.load( [
-				'px.png', 'nx.png',
-				'py.png', 'ny.png',
-				'pz.png', 'nz.png'
-					] );
-					
-				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
+//				var loader = new THREE.CubeTextureLoader();
+//				loader.setPath( 'textures/cube/pisa/' );
+//
+//				var textureCube = loader.load( [
+//				'px.png', 'nx.png',
+//				'py.png', 'ny.png',
+//				'pz.png', 'nz.png'
+//					] );
+//				
+				// load a texture, set wrap mode to repeat
+				var texture = new THREE.TextureLoader().load( "textures/water.jpg" );
+				texture.wrapS = THREE.RepeatWrapping;
+				texture.wrapT = THREE.RepeatWrapping;
+				texture.repeat.set( 4, 4 );
+				
+				//var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
+				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
 				// var material = new THREE.MeshLambertMaterial( { envMap: textureCube } );
-				// var material = new THREE.MeshBasicMaterial( { map: textureCube } );
+
 
 				group = new THREE.Group();
 
