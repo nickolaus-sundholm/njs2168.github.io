@@ -45,9 +45,10 @@
 				'py.png', 'ny.png',
 				'pz.png', 'nz.png'
 					] );
-
+					
+				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
 				// var material = new THREE.MeshLambertMaterial( { envMap: textureCube } );
-				var material = new THREE.MeshBasicMaterial( { map: textureCube } );
+				// var material = new THREE.MeshBasicMaterial( { map: textureCube } );
 
 				group = new THREE.Group();
 

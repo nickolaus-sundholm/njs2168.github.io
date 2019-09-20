@@ -46,7 +46,8 @@
 				'pz.png', 'nz.png'
 					] );
 
-				var material = new THREE.MeshLambertMaterial( { envMap: textureCube } );
+				// var material = new THREE.MeshLambertMaterial( { envMap: textureCube } );
+				var material = new THREE.MeshBasicMaterial( { map: textureCube } );
 
 				group = new THREE.Group();
 
