@@ -12,6 +12,8 @@
 
 			import * as THREE from '../build/three.module.js';
 
+			import { BasisTextureLoader } from './jsm/loaders/BasisTextureLoader.js';
+			
 			import Stats from './jsm/libs/stats.module.js';
 
 			var camera, scene, renderer, stats, group;
@@ -35,20 +37,18 @@
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
 				
-				var texture = THREE.ImageUtils.loadTexture( 'textures/patterns/generation12.png' );
-				texture.needsUpdate = true;
-				//var material = new THREE.MeshBasicMaterial( { map: texture } ); 
-				var material = new THREE.MeshNormalMaterial( { map: texture } );
-//				// cloth material
-//				var loader = new THREE.TextureLoader();
-//				var texture = loader.load( 'textures/patterns/generation12.png' );
-//				//clothTexture.anisotropy = 16;
-//
-//				var material = new THREE.MeshLambertMaterial( {
-//					map: texture,
-//				  // side: THREE.DoubleSide,
-//				} );
 				
+				var loader = new THREE.CubeTextureLoader();
+				loader.setPath( 'textures/cube/pisa/' );
+
+				var textureCube = loader.load( [
+				'px.png', 'nx.png',
+				'py.png', 'ny.png',
+				'pz.png', 'nz.png'
+					] );
+
+				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
+
 				group = new THREE.Group();
 
 				for ( var i = 0; i < 1000; i ++ ) {
