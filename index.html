@@ -37,15 +37,15 @@
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
 				
-//				var loader = new THREE.CubeTextureLoader();
-//				loader.setPath( 'textures/cube/pisa/' );
-//
-//				var textureCube = loader.load( [
-//				'px.png', 'nx.png',
-//				'py.png', 'ny.png',
-//				'pz.png', 'nz.png'
-//					] );
-//				
+				var loader = new THREE.CubeTextureLoader();
+				loader.setPath( 'textures/cube/pisa/' );
+
+				var textureCube = loader.load( [
+				'px.png', 'nx.png',
+				'py.png', 'ny.png',
+				'pz.png', 'nz.png'
+					] );
+				
 				// load a texture, set wrap mode to repeat
 				var texture = new THREE.TextureLoader().load( "textures/water.jpg" );
 				texture.wrapS = THREE.RepeatWrapping;
