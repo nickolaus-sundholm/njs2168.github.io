@@ -37,41 +37,33 @@
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
 				
-				var loader = new THREE.CubeTextureLoader();
-				loader.setPath( 'textures/cube/pisa/' );
-
-				var textureCube = loader.load( [
-				'px.png', 'nx.png',
-				'py.png', 'ny.png',
-				'pz.png', 'nz.png'
-					] );
+//				var loader = new THREE.CubeTextureLoader();
+//				loader.setPath( 'textures/cube/pisa/' );
+//
+//				var textureCube = loader.load( [
+//				'px.png', 'nx.png',
+//				'py.png', 'ny.png',
+//				'pz.png', 'nz.png'
+//					] );
 				
 				// load a texture, set wrap mode to repeat
-				var texture = new THREE.TextureLoader().load( "textures/patterns/generation12.png" );
-				texture.wrapS = THREE.RepeatWrapping;
-				texture.wrapT = THREE.RepeatWrapping;
-				texture.repeat.set( 4, 4 );
+				//var texture = new THREE.TextureLoader().load( "textures/patterns/generation12.png" );
+				//texture.wrapS = THREE.RepeatWrapping;
+				//texture.wrapT = THREE.RepeatWrapping;
+				//texture.repeat.set( 4, 4 );
 				
-				//var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
-				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
-				// var material = new THREE.MeshLambertMaterial( { envMap: textureCube } );
+				//var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
 
 
 				group = new THREE.Group();
 
-				for ( var i = 0; i < 1000; i ++ ) {
+				for ( var i = 0; i < 100; i ++ ) {
 
 
-//					// cloth material
-//					var loader = new THREE.TextureLoader();
-//					var clothTexture = loader.load( 'textures/patterns/generation1' + i + '.png' );
-//					//clothTexture.anisotropy = 16;
-//
-//					var material = new THREE.MeshLambertMaterial( {
-//					map: clothTexture,
-//				  side: THREE.DoubleSide,
-//				  alphaTest: 0.5
-//					} );
+					// Loop through all images and add to face of cube
+					var texture = new THREE.TextureLoader().load( "textures/patterns/generation1" + i + ".png" );
+					var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
+
 					
 					var mesh = new THREE.Mesh( geometry, material );
 					mesh.position.x = Math.random() * 2000 - 1000;
