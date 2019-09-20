@@ -47,7 +47,7 @@
 				'pz.png', 'nz.png'
 					] );
 
-				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
+				var material = new THREE.MeshBasicMaterial( { envMap: textureCube } );
 
 				group = new THREE.Group();
 

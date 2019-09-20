@@ -15,6 +15,9 @@
 			import { BasisTextureLoader } from './jsm/loaders/BasisTextureLoader.js';
 			
 			import Stats from './jsm/libs/stats.module.js';
+			
+			import { OrbitControls } from './jsm/controls/OrbitControls.js';
+			import { ParallaxShader } from './jsm/shaders/ParallaxShader.js';
 
 			var camera, scene, renderer, stats, group;
 
@@ -37,17 +40,36 @@
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
 				
+				var shader = ParallaxShader;
+				var uniforms = THREE.UniformsUtils.clone( shader.uniforms );
+				var parameters = {
+					fragmentShader: shader.fragmentShader,
+					vertexShader: shader.vertexShader,
+					uniforms: uniforms
+				};
+
+				//
+
+				var textureLoader = new THREE.TextureLoader();
+
+				material = new THREE.ShaderMaterial( parameters );
+				material.map = textureLoader.load( 'textures/brick_diffuse.jpg' );
+//				material.bumpMap = textureLoader.load( 'textures/brick_bump.jpg' );
+				material.map.anisotropy = 4;
+//				material.bumpMap.anisotropy = 4;
+				uniforms[ 'map' ].value = material.map;
+//				uniforms[ 'bumpMap' ].value = material.bumpMap;*/
 				
-				var loader = new THREE.CubeTextureLoader();
-				loader.setPath( 'textures/cube/pisa/' );
-
-				var textureCube = loader.load( [
-				'px.png', 'nx.png',
-				'py.png', 'ny.png',
-				'pz.png', 'nz.png'
-					] );
-
-				var material = new THREE.MeshBasicMaterial( { envMap: textureCube } );
+//				var loader = new THREE.CubeTextureLoader();
+//				loader.setPath( 'textures/cube/pisa/' );
+//
+//				var textureCube = loader.load( [
+//				'px.png', 'nx.png',
+//				'py.png', 'ny.png',
+//				'pz.png', 'nz.png'
+//					] );
+//
+//				var material = new THREE.MeshLambertMaterial( { envMap: textureCube } );
 
 				group = new THREE.Group();
 
