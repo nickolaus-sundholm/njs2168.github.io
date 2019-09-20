@@ -47,13 +47,13 @@
 					] );
 				
 				// load a texture, set wrap mode to repeat
-				var texture = new THREE.TextureLoader().load( "textures/water.jpg" );
+				var texture = new THREE.TextureLoader().load( "textures/patterns/generation12.jpg" );
 				texture.wrapS = THREE.RepeatWrapping;
 				texture.wrapT = THREE.RepeatWrapping;
 				texture.repeat.set( 4, 4 );
 				
 				//var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
-				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: textureCube } );
+				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
 				// var material = new THREE.MeshLambertMaterial( { envMap: textureCube } );
 
 
