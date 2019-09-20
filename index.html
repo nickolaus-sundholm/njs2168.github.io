@@ -57,11 +57,39 @@
 
 				group = new THREE.Group();
 
-				for ( var i = 0; i < 100; i ++ ) {
+				for ( var i = 0; i < 1000; i ++ ) {
 
-
+					if (i > 100) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-100 + ".png" );
+					}
+					if (i > 200) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-200 + ".png" );
+					}
+					if (i > 300) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-300 + ".png" );
+					}
+					if (i > 400) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-400 + ".png" );
+					}
+					if (i > 500) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-500 + ".png" );
+					}
+					if (i > 600) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-600 + ".png" );
+					}
+					if (i > 700) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-700 + ".png" );
+					}
+					if (i > 800) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-800 + ".png" );
+					}
+					if (i > 900) {
+  					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i-900 + ".png" );
+					}
+					
+					
 					// Loop through all images and add to face of cube
-					var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i + ".png" );
+					//var texture = new THREE.TextureLoader().load( "images/generation/generation1" + i + ".png" );
 					var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
 
 					
