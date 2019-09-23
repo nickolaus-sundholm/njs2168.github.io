@@ -36,7 +36,7 @@
 				scene.fog = new THREE.Fog( 0xffffff, 1, 10000 );
 
 				var geometry = new THREE.BoxBufferGeometry( 100, 100, 100 );
-				
+		
 //				var loader = new THREE.CubeTextureLoader();
 //				loader.setPath( 'textures/cube/pisa/' );
 //
@@ -54,15 +54,14 @@
 				
 				//var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
 
-
 				group = new THREE.Group();
 
-				for ( var i = 0; i < 1000; i ++ ) {
+				for ( var i = 0; i < 900; i ++ ) {
 
 					// Loop through all images and add to face of cube
-					var texture = new THREE.TextureLoader().load( "images/generation/generation (" + i + ").png" );
-					// var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
-					var material = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture, shininess: 30 } );			
+					var texture = new THREE.TextureLoader().load( "images/generation/generation" + i + ".png" );
+					var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
+					// var material = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture, shininess: 30 } );			
 					
 					var mesh = new THREE.Mesh( geometry, material );
 					mesh.position.x = Math.random() * 2000 - 1000;
