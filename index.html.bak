@@ -56,7 +56,7 @@
 
 				group = new THREE.Group();
 
-				for ( var i = 0; i < 900; i ++ ) {
+				for ( var i = 0; 200 < i < 900; i ++ ) {
 
 					// Loop through all images and add to face of cube
 					var texture = new THREE.TextureLoader().load( "images/generation/generation" + i + ".png" );
